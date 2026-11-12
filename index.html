@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#10243A" />
+  <meta name="description" content="GreenFarm — planejamento e acompanhamento das demandas de compras da Saúde." />
+  <title>GreenFarm — Gestão de demandas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#inicio" aria-label="GreenFarm início">
+        <img src="Logo GreenFarm.png" alt="GreenFarm" />
+      </a>
+      <div class="workspace-label">ESPAÇO DE TRABALHO</div>
+      <button class="workspace-switcher"><span class="workspace-mark">C</span><span><strong>Saúde de Ceres</strong><small>Ambiente de demonstração</small></span><span class="chevron">⌄</span></button>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <div class="nav-section">GESTÃO</div>
+        <button class="nav-item active" data-page="inicio"><span class="nav-icon">◫</span>Visão geral</button>
+        <button class="nav-item" data-page="requisicoes"><span class="nav-icon">▤</span>Requisições<span class="nav-count" id="request-count">6</span></button>
+        <button class="nav-item" data-page="programacao"><span class="nav-icon">▦</span>Programação</button>
+        <button class="nav-item" data-page="processos"><span class="nav-icon">⌘</span>Processos</button>
+        <button class="nav-item" data-page="recebimentos"><span class="nav-icon">⇣</span>Recebimentos<span class="nav-dot"></span></button>
+        <div class="nav-section nav-gap">ACOMPANHAMENTO</div>
+        <button class="nav-item" data-page="indicadores"><span class="nav-icon">⌁</span>Indicadores</button>
+        <button class="nav-item" data-page="historico"><span class="nav-icon">◷</span>Histórico</button>
+        <div class="nav-section nav-gap">CONFIGURAÇÃO</div>
+        <button class="nav-item" data-page="cadastros"><span class="nav-icon">▧</span>Cadastros</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><div class="help-icon">✳</div><strong>Precisa de uma mão?</strong><p>Acesse o guia rápido da GreenFarm.</p><button id="help-button">Ver guia <span>↗</span></button></div>
+        <button class="user-profile" id="profile-button"><span class="avatar avatar-blue">GF</span><span class="user-copy"><strong>Equipe GreenFarm</strong><small>Sessão local</small></span><span class="more">···</span></button>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobile-menu" aria-label="Abrir menu">☰</button>
+        <div class="breadcrumbs"><span>GreenFarm</span><i>/</i><strong id="breadcrumb-current">Visão geral</strong></div>
+        <div class="topbar-actions">
+          <label class="search-box"><span>⌕</span><input id="global-search" type="search" placeholder="Buscar demanda, item..." /><kbd>⌘ K</kbd></label>
+          <button class="icon-button notification-button" id="notification-button" aria-label="Notificações">♧<i></i></button>
+          <span class="topbar-divider"></span>
+          <button class="profile-mini" id="top-profile"><span class="avatar avatar-blue">GF</span><span>Equipe GreenFarm</span><b>⌄</b></button>
+        </div>
+      </header>
+      <section class="page-content" id="page-content" aria-live="polite"></section>
+      <footer class="app-footer"><span>GREENFARM <i>·</i> AMBIENTE DE DEMONSTRAÇÃO</span><span>Dados fictícios para validação do protótipo <b>●</b></span></footer>
+    </main>
+  </div>
+  <div id="modal-root"></div>
+  <div id="toast-region" class="toast-region" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
